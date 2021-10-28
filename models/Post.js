@@ -22,6 +22,10 @@ Post.init(
                 isURL: true
             }
         },
+        review: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
