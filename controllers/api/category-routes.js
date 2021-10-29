@@ -37,6 +37,16 @@ router.post('/', (req, res) => {
   .catch(err => res.status(500).json(err));
 });
 
-
+router.delete('/:id', (req, res) => {
+  Category.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(dbCategoryData => {
+    res.json(dbCategoryData);
+  })
+  .catch(err => res.status(500).json(err));
+})
 
 module.exports = router;
