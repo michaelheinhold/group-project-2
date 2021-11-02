@@ -28,6 +28,7 @@ router.get('/:id/followers', (req, res) => {
     where: {
       id: req.params.id
     },
+    attributes: { exclude: ['email', 'password']},
     include: ['followers']
   })
   .then(dbUserData => res.json(dbUserData))
@@ -42,6 +43,7 @@ router.get('/:id/following', (req , res) => {
     where: {
       id: req.params.id
     },
+    attributes: { exclude: ['email', 'password']},
     include: ['following']
   })
     .then(dbUserData => res.json(dbUserData))
@@ -104,6 +106,17 @@ router.post('/:id/follow', (req, res) => {
   UserFollowers.create({
     user_id: req.params.id,
     follower_id: req.body.follower_id
+  })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => res.status(500).json(err));
+});
+
+router.post('/:id/unfollow', (req, res) => {
+  UserFollowers.destroy({
+    where: {
+      user_id: req.params.id,
+      follower_id: req.body.follower_id
+    }
   })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => res.status(500).json(err));
