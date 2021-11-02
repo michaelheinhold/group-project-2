@@ -59,3 +59,29 @@
   </div>
   <!-- ///////// END First Column Content ////////////// -->
   
+ <!-- ///////// START OF 2nd Column ////////////// -->
+  <div class="col-sm-12 col-lg-6">
+    <div class="oBox">
+      <div class="row d-flex justify-content-center">
+        <!-- START OF div column container for the Watch List Section-->
+        <!-- define a border for this <div> below -->
+        <div class="col-12 d-flex justify-content-center">
+          <h2>My Reviews<h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <!-- ///////// Review List Rendered in HERE ////////////// -->
+
+          <section class="box">
+            {{#each}}
+            {{>}}
+            {{/each}}
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ///////// END OF 2nd Column ////////////// -->
+</div>
+<!-- ///////// END OF Two Column Content ////////////// -->
