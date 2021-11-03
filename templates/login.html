@@ -1,0 +1,108 @@
+<body>
+
+    <head>
+        <link rel="stylesheet" href="../../public/stylesheets/styles.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    </head>
+
+    <header></header>
+
+    <!-- LOGIN PAGE IS THE NEW HOME PAGE?? ASK THE GROUP! CONTENT TO GO IN THE {{{ body }}} -->
+    <div class="row data-card">
+        <div class="col-12 d-flex justify-content-center">
+            <h1>Working Title</h1>
+        </div>
+        <div class="col-12 d-flex justify-content-center">
+            <h2 id="NONE">Where To Find Reviewers Like You!</h2>
+        </div>
+        <div>
+            <!-- START OF div column container for the login FORM/Input -->
+            <div class="col-sm-12  col-md-12 col-lg-3 d-flex justify-content-center"></div>
+            <div class="col-sm-12  col-md-12 col-lg-6 d-flex justify-content-center">
+                <!-- Login Title with row and column !!! NO BORDER !!!! -->
+                <div class="oBox">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            <h2>LOGIN</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+    
+                            <!-- start of Nessted login input field -->
+                            <div class="row">
+                                <div class="box">
+                                    <div class="row">
+                                        <div class="col-12 d-flex justify-content-center">
+    
+                                            <Input class="fullFormLite createLOGIN" id="email" placeholder="email"></Input>
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <Input class="fullFormLite createLOGIN" type="password" id="password"
+                                                placeholder="password"></Input>
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <button class="btn createLOGIN" id="login">Login</button>
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center">
+    
+                                            <a class="d-flex justify-content-center" href="/signup" id="memLink"><br>Create
+                                                Account</a>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- start of Nessted login input field -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-mdcol-lg-3 d-flex justify-content-center"></div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- END OF div column container for the login FORM/Input -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(document).on("click", "#login", function () {
+
+            let newUser = {
+                email: $("#email").val(),
+                password: $("#password").val()
+            };
+
+            $.ajax({
+                url: "/api/users/login",
+                method: "POST",
+                data: newUser
+            }).then(function (response) {
+                console.log(response);
+                location.href = "/profile"
+
+            })
+        })
+    </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+
+
+<script>
+
+    gsap.from('div', { opacity: 0, duration: 1.25, y: 26, ease: 'Power2.easeInOut' })
+
+</script>
+
+</body>

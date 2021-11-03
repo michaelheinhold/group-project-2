@@ -11,23 +11,34 @@
 
 	<header></header>
 
-	<div class="row justify-content-center">
+	<div class="landing row justify-content-center">
 
 		<!-- CREATE ACCOUNT PAGE CONTENT TO GO IN THE {{{ body }}}-->
 		<div>
-			<div class="col-lg-12 data-card">
+
+			<head>
+				<link rel="stylesheet" href="../../public/stylesheets/styles.css">
+				<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+					integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+					crossorigin="anonymous">
+			</head>
+
+			<div class="col-lg-12 login-card">
 				<!-- START OF div column container for the login FORM/Input -->
 				<!-- define a border for this part -->
 				<div>
 					<!-- Login Title with row and column !!! NO BORDER !!!! -->
-					<h1>Join To Add A Review</h1></br>
+					<div class="oBox">
+						<h1>Join To Add A Review</h1></br>
 						<div class="row">
 							<div class="col-12 d-flex justify-content-center">
 								<h2>Create Account</h2></br>
 							</div>
 						</div>
+
 						<div class="row">
 							<div class="col-12 d-flex justify-content-center">
+
 								<!-- start of Nessted login input field -->
 								<div class="row">
 									<div class="box">
@@ -42,6 +53,7 @@
 											<Input class="fullFormLite createLOGIN" id="email"
 												placeholder="Email"></Input>
 										</div>
+										</br>
 										<div class="col-12 justify-content-center">
 											<label for="password" class="form-label"></label></br>
 											<Input class="fullFormLite createLOGIN justify-content-center"
@@ -56,13 +68,21 @@
 											<a href="/login" id="memLink"><br>Login</a>
 										</div>
 									</div>
+
 								</div>
 							</div>
 						</div>
+
 					</div>
 				</div>
 			</div>
+			<div class="col-sm-12 col-md-12 col-mdcol-lg-3 d-flex justify-content-center"></div>
 		</div>
+
+	</div>
+
+	<footer></footer>
+
 	<!-- END OF div column container for the login FORM/Input -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
 		integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -93,7 +113,7 @@
 
 	<script>
 
-		gsap.from('div', { opacity: 0, duration: 1.25, y: 26, ease: 'Power2.easeInOut' })
+		gsap.from('div', { opacity: 0, duration: 1.25, y: 25, ease: 'Power2.easeInOut' })
 
 	</script>
 

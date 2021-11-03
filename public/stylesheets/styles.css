@@ -1,0 +1,50 @@
+body {
+    background-image: url(/assets/background.jpg);
+}
+
+header {
+    background-image: url("/assets/background.jpg");
+    background-color: white;
+    height: 250px;
+    display: block;
+    position: relative;
+}
+
+.data-card {
+    color: white;
+    padding: 25px;
+    border-style: solid;
+    border-width: thin;
+    border-color: rgba(0, 0, 0, 1);
+    background-color:rgba(0, 0, 0, .90);
+    border-radius: 15px;
+}
+input:focus {
+    outline-width:0;
+}
+
+button {
+    outline: none;
+    color: white;
+    border: none;
+    height: 33px;
+    width: 100px;
+    background-color: tomato;
+}
+
+button:focus {
+    outline:none !important;
+}
+
+button:hover {
+    background-color: red;
+}
+
+#memlink {
+    color: white;
+    text-decoration: none;
+}
+
+#memlink:hover {
+    color: grey;
+}
