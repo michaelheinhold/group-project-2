@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User, Comment } = require('../../models');
+const { Post, User, Comment, Category } = require('../../models');
 const withAuth = require('../../utils/withAuth');
 
 router.get('/', (req, res) => {
@@ -17,17 +17,22 @@ router.get('/', (req, res) => {
       model: User,
       attributes: ['username']
     },
+    include: {
+      model: Category,
+      attributes: ['type']
+    }
   })
     .then(dbPostData => {res.json(dbPostData)})
     .catch(err => res.json(err));
 });
 
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
   Post.create({
     title: req.body.title,
     post_url: req.body.post_url,
     review: req.body.review,
-    user_id: req.body.user_id
+    user_id: req.body.user_id,
+    category_id: req.body.category_id
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => res.status(500).json(err));

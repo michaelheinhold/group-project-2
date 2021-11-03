@@ -1,4 +1,6 @@
 const { User, Post, Comment } = require('../../models');
+const { sequelize } = require('../../models/UserFollowers');
+const UserFollowers = require('../../models/UserFollowers');
 const router = require('express').Router();
 const withAuth = require('../../utils/withAuth');
 
@@ -21,6 +23,33 @@ router.get('/:id', (req, res) => {
     .catch(err => res.status(500).json(err));
 });
 
+router.get('/:id/followers', (req, res) => {
+  User.findAll({
+    where: {
+      id: req.params.id
+    },
+    attributes: { exclude: ['email', 'password']},
+    include: ['followers']
+  })
+  .then(dbUserData => res.json(dbUserData))
+  .catch(err => {
+    res.status(500).json(err)
+    console.log(err)
+  });
+});
+
+router.get('/:id/following', (req , res) => {
+  User.findAll({
+    where: {
+      id: req.params.id
+    },
+    attributes: { exclude: ['email', 'password']},
+    include: ['following']
+  })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => res.status(500).json(err));
+});
+
 router.post('/', (req, res) => {
   User.create({
     username: req.body.username,
@@ -34,24 +63,6 @@ router.post('/', (req, res) => {
       });
 });
 
-// router.post('/', (req, res) => {
-//   User.create({
-//     username: req.body.username,
-//     email: req.body.email,
-//     password: req.body.password
-//   })
-//   .then(dbUserData => {
-//     req.session.save(() => {
-//       req.session.user_id = dbUserData.id;
-//       req.session.username = dbUserData.username;
-//       req.session.loggedIn = true;
-
-//       res.json(dbUserData);
-//     });
-//   })
-//   .catch(err => res.status(500).json(err));
-// });
-
 router.post('/login', (req, res) => {
   User.findOne({
     where: {
@@ -64,7 +75,7 @@ router.post('/login', (req, res) => {
         return;
       }
 
-      const validPassword = dbUserData.checkPass(req.body.password);
+      const validPassword = dbUserData.checkPassword(req.body.password);
       if(!validPassword) {
         res.status(400).json({ message: 'Incorrect Password!' });
         return;
@@ -90,6 +101,26 @@ router.post('/logout', withAuth, (req, res) => {
     res.status(404).end();
   }
 });
+
+router.post('/:id/follow', (req, res) => {
+  UserFollowers.create({
+    user_id: req.params.id,
+    follower_id: req.body.follower_id
+  })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => res.status(500).json(err));
+});
+
+router.post('/:id/unfollow', (req, res) => {
+  UserFollowers.destroy({
+    where: {
+      user_id: req.params.id,
+      follower_id: req.body.follower_id
+    }
+  })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => res.status(500).json(err));
+})
 
 router.put('/:id', withAuth, (req, res) => {
   User.update(req.body, {
