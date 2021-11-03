@@ -36,7 +36,54 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/profile', (req, res) => {
-  res.render('profile');
+  User.findOne({
+    where: {
+      id: req.session.user_id
+    },
+    attributes: ['username', 'id'],
+    include: ['followers', 'following', {
+      model: Post,
+      key: 'user_id'
+    }]
+  })
+    .then(dbUserData => {
+      const user = dbUserData.get({ plain: true });
+      res.render('profile', { user, loggedIn: true });
+    })
+    .catch(err => res.status(500).json(err))
 });
+
+router.get('/user/:id', (req, res) => {
+  User.findOne({
+    where: {
+      id: req.params.id
+    },
+    attributes: ['username', 'id'],
+    include: ['followers', 'following', {
+      model: Post,
+      key: 'user_id'
+    }]
+  })
+    .then(dbUserData => {
+      const user = dbUserData.get({ plain: true });
+      res.render('profile', { user, loggedIn: true });
+    })
+    .catch(err => res.status(500).json(err))
+})
+
+router.get('/:id/followers', (req, res) => {
+  User.findOne({
+    where: {
+      id: req.params.id
+    },
+    include: ['followers']
+  })
+    .then(dbUserData => {
+    const user = dbUserData.get({ plain: true });
+    console.log(user)
+    res.render('followers', { user, loggedIn: true });
+    })
+  .catch(err => res.status(500).json(err))
+})
 
 module.exports = router;
