@@ -8,14 +8,6 @@
 <div class="main content">
     <div class="subject container">
         <form>
-            <div class="form-group">
-                <select name="category-type" id="select-dropdown">
-                    <option value="" disabled selected>Pick a category type</option>
-                    <option value="Book">Book</option>
-                    <option value="Movie">Movie</option>
-                </select>
-            </div>
-
             <label for="title">What are you reviewing?</label>
             <input type="text" placeholder="Name" name="title" id="title" class="title" />
 
@@ -33,8 +25,7 @@
         
         let newPost = {
             title: $("#title").val(),
-            review: $("#review").val(),
-            category_id: $("select-dropdown").val()
+            review: $("#review").val()
         };
 
             console.log(newPost);
