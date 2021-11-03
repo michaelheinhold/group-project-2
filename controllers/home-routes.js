@@ -35,6 +35,10 @@ router.get('/signup', (req, res) => {
   res.render('createAccount');
 });
 
+router.get('/create-post', (req, res) => {
+  res.render('createPost');
+})
+
 router.get('/profile', (req, res) => {
   User.findOne({
     where: {
