@@ -1,0 +1,51 @@
+<!-- Page Title -->
+<div class="row">
+    <div class="col-12 d-flex justify-content-center">
+        <h1>Create a Handle</h1>
+    </div>
+</div>
+
+<div class="main content">
+    <div class="subject container">
+        <form>
+            <div class="form-group">
+                <select name="category-type" id="select-dropdown">
+                    <option value="" disabled selected>Pick a category type</option>
+                    <option value="Book">Book</option>
+                    <option value="Movie">Movie</option>
+                </select>
+            </div>
+
+            <label for="title">What are you reviewing?</label>
+            <input type="text" placeholder="Name" name="title" id="title" class="title" />
+
+            <label for="review">What did you think?</label>
+            <input type="text" placeholder="Give us your thoughts" name="review-review" id="review-review" class="review-review" />
+
+            <button type="submit" id="newPost">Submit</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $(document).on("click", "#newPost", function () {
+        
+        let newPost = {
+            title: $("#title").val(),
+            review: $("#review").val(),
+            category_id: $("select-dropdown").val()
+        };
+
+            console.log(newPost);
+
+        $.ajax({
+            url: "/api/posts",
+            method: "POST",
+            data: newPost
+        }).then(function(response) {
+            console.log(response);
+            window.location = "/posts";
+        })
+    })
+</script>
