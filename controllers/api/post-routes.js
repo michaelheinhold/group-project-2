@@ -31,8 +31,8 @@ router.post('/', (req, res) => {
     title: req.body.title,
     post_url: req.body.post_url,
     review: req.body.review,
-    user_id: req.body.user_id,
-    category_id: req.body.category_id
+    user_id: req.session.user_id,
+    // category_id: req.body.category_id
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => res.status(500).json(err));

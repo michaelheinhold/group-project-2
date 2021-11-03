@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/michaelheinhold/group-project-2#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "connect-session-sequelize": "^7.1.2",
     "dotenv": "^10.0.0",
