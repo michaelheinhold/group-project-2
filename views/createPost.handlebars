@@ -14,6 +14,9 @@
             <label for="review">What did you think?</label>
             <input type="text" placeholder="Give us your thoughts" name="review-review" id="review-review" class="review-review" />
 
+            <label for="url">What is the link for a trailer for this film?</label>
+            <input type="text" placeholder="Link" name="post_url" id="post_url" class="post_url" />
+
             <button type="submit" id="newPost">Submit</button>
         </form>
     </div>
@@ -25,7 +28,8 @@
         
         let newPost = {
             title: $("#title").val(),
-            review: $("#review").val()
+            review: $("#review").val(),
+            post_url: $("#post_url").val()
         };
 
             console.log(newPost);
