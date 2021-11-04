@@ -111,6 +111,11 @@ label {
     background-color: rgba(33, 33, 33, .33); 
 }
 
+.comment-form {
+    height: 10vh;
+    width: 75vh;
+}
+
 .follows {
     text-align: center;
     font-size: 1.8rem;
