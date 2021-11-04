@@ -144,6 +144,10 @@ img {
     width: 500px;
 }
 
+input {
+    text-align: center;
+}
+
 input:focus {
     outline-width:0;
 }
@@ -154,14 +158,14 @@ button {
     border: none;
     height: 33px;
     width: 100px;
-    background-color: tomato;
+    background-color: red;
 }
 button:focus {
     outline:none !important;
 }
 
 button:hover {
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.671);
 }
 
 #memlink {
