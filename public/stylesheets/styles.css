@@ -5,7 +5,7 @@ body {
 header {
     background-image: url("../assets/background.jpg");
     background-color: black;
-    height: 250px;
+    height: 200px;
     display: block;
     position: relative;
 }
@@ -15,12 +15,16 @@ nav {
     font-weight: 700;
     color: white;
     background-color:black;
-    height: 50px;
+    height: 6vh;
     padding: 10px;
 }
 
 ul {
     list-style-type: none;
+}
+
+img {
+    border-radius: 100px;
 }
 
 .link {
@@ -38,29 +42,29 @@ ul {
     border-style: solid;
     border-width: thin;
     border-color: rgba(0, 0, 0, 1);
-    background-color:rgba(0, 0, 0, .90);
+    background-color:rgba(0, 0, 0, .98);
     border-radius: 15px;
 }
 
 .profile-card {
-    height: 950px;
+    height: 95vh;
     color: white;
     padding: 25px;
     border-style: solid;
     border-width: thin;
     border-color: rgba(0, 0, 0, 1);
-    background-color:rgba(0, 0, 0, .90);
+    background-color:rgba(0, 0, 0, .98);
 }
 
 .feed-card {
     /* margin-top: -16; */
-    height: 881px;
+    height: 95vh;
     color: white;
     padding:25px;
     border-style: solid;
     border-width: thin;
     border-color: rgba(0, 0, 0, 1);
-    background-color:rgba(0, 0, 0, .90);
+    background-color:rgba(0, 0, 0, .95);
 }
 
 .feed-item {
@@ -77,32 +81,42 @@ ul {
     border-style: solid;
     border-width: thin;
     border-color: rgba(0, 0, 0, 1);
-    background-color:rgba(0, 0, 0, 0.9);
+    background-color:rgba(0, 0, 0, 0.98);
 }
 
-.followers {
+.Followers {
     margin-top: 25;
     font-weight: 700;
     color: white;
 }
 
-.following {
+.Following {
     margin-top: 25;
     font-weight: 700;
     color: white;  
 }
 
+.Followers:hover {
+    text-decoration: none;
+    color: grey
+}
+
+.Following:hover {
+    text-decoration: none;
+    color: grey
+}
+
 .followers-number {
     background-color: grey;
     color: black;
-    padding: 5;
+    padding: 15;
     font-weight: 900;
     border-radius: 50px;
 }
 .following-number {
     background-color: grey;
     color: black;
-    padding: 5;
+    padding: 15;
     font-weight: 900;
     border-radius: 50px;
 }
