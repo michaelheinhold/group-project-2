@@ -1,21 +1,22 @@
 <body>
   {{> navbar}}
-
   <!-- PROFILE PAGE CONTENT TO GO IN THE {{{ body }}} -->
   <!-- ///////// Page Tile Row ////////////// -->
   <div class="feed-card">
+    {{#if post-info}}
     <div class="feed-item">
       <h2 class="bold">
-      {{!-- POST TITLE TO GO HERE --}}
+        {{!-- POST TITLE TO GO HERE --}}
       </h2>
     </div>
     <div class="feed-item post-title">
       <h6>
-      {{!-- POST INFO TO GO HERE --}}
-      {{> post-info}}
+        {{!-- POST INFO TO GO HERE --}}
+        {{> post-info}}
       </h6>
     </div>
-    
+    {{/if}}
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
       integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
