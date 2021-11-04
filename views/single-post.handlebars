@@ -1,6 +1,5 @@
 <body>
 
-<<<<<<< HEAD
     <head>
         <link rel="stylesheet" href="../../public/stylesheets/styles.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -54,46 +53,6 @@
 
         </div>
     </div>
-=======
-  <head>
-    <link rel="stylesheet" href="../../public/stylesheets/styles.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  </head>
-
-  {{> navbar}}
-
-  <div class="single-post-card">
-    <div class="justify-content-center">
-      <div class="post-data feed-item">
-
-        <h2 class="bold">{{post.title}}</h2>
-        <h5>{{format_dates post.createdAt}}</h5>
-        <h5>{{post.user.username}}</h5>
-        <h6>{{post.review}}</h6>
-
-        {{/if}}
-
-        {{#each post.comments as |comment|}}
-        {{comment.comment_text}}
-        by {{comment.user.username}}
-        {{/each}}
-
-        {{#if loggedIn}}
-
-      </div></br>
-      <div class="container comment-form">
-        <h5 class="bold">Comments</h5>
-        <h5>{{#if loggedIn}} write a comment:</h5>
-        <form class="justify-content-center">
-          <textarea name="comment" id="comment" cols="30" rows="5" class="comment-form"></textarea></br></br>
-          <button type="submit" class="comment-btn bold">COMMENT</button>
-        </form>
-      </div>
->>>>>>> c268209b1221e48ade97f1d9533633a85e1df4bb
 
     </div>
   </div>
