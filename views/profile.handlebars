@@ -14,7 +14,7 @@
         <!-- ///////// START OF Two Column Content ////////////// -->
         {{> profile-content}}</br></br>
 
-        <div class="row posts profile-item">
+        <div class="row posts profile-item justify-content-center">
             <div class="col-12 d-flex justify-content-center">
                 <h2 class="bold">Your Posts ({{user.posts.length}})</h2></br></br>
             </div>
@@ -49,14 +49,14 @@
                 headers: { 'Content-Type': 'application/json' }
             });
 
-            if(response.ok) {
+            if (response.ok) {
                 document.location.replace('/');
             } else {
                 alert(response.statusText);
             }
-            }
+        }
 
-            document.querySelector('#logout-btn').addEventListener('click', logout);
+        document.querySelector('#logout-btn').addEventListener('click', logout);
     </script>
 
 </body>

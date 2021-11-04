@@ -7,7 +7,7 @@
 
         <div class="row profile-item">
             <div class="col-12 d-flex justify-content-center">
-                <h1>{{user.username}}</h1>
+                <h1 class="bold">{{user.username}}</h1>
             </div>
         </div>
 
@@ -15,14 +15,15 @@
         <!-- ///////// START OF Two Column Content ////////////// -->
         {{> profile-content}}
 
-        <div class="row posts">
+        </br>
+        <div class="row posts profile-item justify-content-center">
             <div class="col-12 d-flex justify-content-center">
-                <h2>{{user.username}}'s Posts ({{user.posts.length}})</h2>
+                <h2 class="bold">{{user.username}}'s Posts ({{user.posts.length}})</h2>
             </div>
-            <div class="">
+            <div class="justify-content-center">
                 {{#each user.posts as |post|}}
                 <div class="feed-item d-flex justify-content-center">
-                    <h2>{{post.title}}</h2>
+                    <h2 class="bold">{{post.title}}</h2>
                 </div>
                 <div class="feed-item post-title">
                     <h5>Posted: {{format_dates post.createdAt}} // Comments: {{post.comments.length}}</h5>
