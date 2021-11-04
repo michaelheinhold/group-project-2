@@ -1,3 +1,16 @@
+<body>
+
+	<head>
+		<link rel="stylesheet" href="../../public/stylesheets/styles.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	</head>
+
+	<header></header>
+
 <!-- Page Title -->
 <div class="row">
     <div class="col-12 d-flex justify-content-center">
@@ -5,7 +18,7 @@
     </div>
 </div>
 
-<div class="main content">
+<div class="main content post-card">
     <div class="subject container">
         <form>
             <label for="title">What are you reviewing?</label>
@@ -44,3 +57,15 @@
         })
     })
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+
+<script>
+
+    gsap.from('.create-card', { opacity: 0, duration: 1.25, y: 26, ease: 'Power2.ease' })
+    // gsap.from("div", {duration: 1.25, scale: .33, ease: "expoScale(1, 2)"});	
+    // gsap.from(".create-card", {duration: 1.25, y: -500, ease: "slow"});
+    </script>
+
+
+</body>
