@@ -93,6 +93,7 @@ label {
     margin: 15px;
     padding: 15px;
     background-color: rgba(33, 33, 33, .95);
+    cursor: pointer;
 }
 
 .post-card{
@@ -108,6 +109,11 @@ label {
 .post-title {
     margin-top: -15px;
     background-color: rgba(33, 33, 33, .33); 
+}
+
+.follows {
+    text-align: center;
+    font-size: 1.8rem;
 }
 
 .Followers {
@@ -132,23 +138,15 @@ label {
     color: grey
 }
 
-.followers-number {
+.followers-number, .following-number {
     background-color: grey;
     color: black;
-    padding: 15;
-    font-weight: 900;
-    border-radius: 50px;
-}
-.following-number {
-    background-color: grey;
-    color: black;
-    padding: 15;
+    padding: 2px;
     font-weight: 900;
     border-radius: 50px;
 }
 
 .review-review {
-    height: 200px;
     width: 500px;
 }
 

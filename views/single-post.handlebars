@@ -1,0 +1,50 @@
+{{post.title}}
+{{format_dates post.createdAt}}
+{{post.user.username}}
+{{post.review}}
+
+comments
+
+{{#if loggedIn}}
+write a comment:
+<form class="comment-form">
+  <textarea name="comment" id="comment" cols="30" rows="5"></textarea>
+  <button type="submit" class="comment-btn">COMMENT</button>
+</form>
+
+{{/if}}
+
+{{#each post.comments as |comment|}}
+{{comment.comment_text}}
+by {{comment.user.username}}
+{{/each}}
+
+{{#if loggedIn}}
+<script>
+  async function commentFormHandler(event) {
+    event.preventDefault();
+
+    const post_id = window.location.toString().split('/')[
+      window.location.toString().split('/').length - 1
+    ];
+    const comment_text = document.querySelector('textarea[name="comment"]').value;
+
+    const response = await fetch('/api/comments', {
+      method: 'post',
+      body: JSON.stringify({
+        comment_text,
+        post_id
+      }),
+      headers: { 'Content-Type': 'application/json' }
+    })
+
+    if(response.ok) {
+      window.location.reload();
+    } else {
+      alert(response.statusText);
+    }
+  }
+
+  document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
+</script>
+{{/if}}

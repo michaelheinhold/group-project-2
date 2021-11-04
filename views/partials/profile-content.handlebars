@@ -1,0 +1,33 @@
+<div class="row profile-item">
+  <!-- ///////// START OF First Column ////////////// -->
+  <div class="col-sm-12 col-lg-12">
+    <!-- ///////// START OF Profile Info ////////////// -->
+    <div class="oBox">
+        <div class="row">
+    </div>
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <!-- start of Nessted PROFILE info -->
+            <div class="row">
+                <div class="col-12 justify-content-center box">
+                    <div class="row">
+                      <div class="col-4 justify-content-center"></br>
+                        <img src="/assets/Blank-avatar.png" alt="avatar"
+                          style="width:150px;height:150px;" />
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="followers"><a href="/{{user.id}}/followers"><span class="Followers">Followers</span></a> //
+            <span class="followers-number">{{user.followers.length}}</span></div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="following"><a href="/{{user.id}}/following"><span class="Following">Following</span></a> //
+        <span class="following-number">{{user.following.length}}</span></div>
+      </div>
+    </div>
+  </div>
+</div>

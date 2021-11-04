@@ -1,133 +1,28 @@
 <body>
+  {{> navbar}}
 
-    <head>
-        <link rel="stylesheet" href="../../public/stylesheets/styles.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    </head>
-
-    <nav class="justify-content-center">
-        <ul class="row justify-content-around">
-            <a href="/" class="link">
-                <li>Feed</li>
-            </a>
-            <a href="/create-post" class="link">
-                <li class="margin">Create A Review</li>
-            </a>
-            <a href="/profile" class="link">
-                <li>Profile</li>
-            </a>
-        </ul>
-    </nav>
-
-    <!-- PROFILE PAGE CONTENT TO GO IN THE {{{ body }}} -->
-    <!-- ///////// Page Tile Row ////////////// -->
-    <div class="feed-card">
-        <div class="feed-item">
-            <h2>Post Title</h2>
-        </div>
-        <div class="feed-item post-title">
-            <h5>Post By: John Doe // Total Followers: 777</h5>
-            <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat nihil aperiam temporibus error
-                officia
-                expedita doloremque facilis quis quaerat. Facilis aut ex necessitatibus quibusdam porro possimus?
-                Repellendus quisquam blanditiis magnam. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Aliquam delectus alias omnis? Facere quis eos expedita nisi veritatis quibusdam excepturi, ab nobis
-                vero
-                iste quia, omnis nulla dolor dolorum ipsum. Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit.
-                Corrupti magnam tempore culpa. Ipsam ex excepturi explicabo minima sint laudantium maiores, alias
-                cum
-                sed quo, corporis inventore. Numquam harum ullam alias? Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Non impedit quos rerum perferendis illo alias asperiores debitis blanditiis
-                aliquam,
-                excepturi consectetur veniam, nesciunt ipsam obcaecati delectus nihil repudiandae, adipisci neque?
-                Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Animi adipisci porro, quasi aspernatur dicta
-                fugit
-                harum repellendus vitae? Aliquam quis perspiciatis officiis earum, adipisci nam placeat! Numquam
-                perspiciatis labore at. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam cumque sunt,
-                ipsa magni accusantium explicabo et tempora nobis atque adipisci fuga molestiae nulla corrupti
-                labore
-                reiciendis, eaque sed? Mollitia, a. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Excepturi
-                accusamus necessitatibus dolore quam vitae architecto numquam sapiente illum commodi incidunt optio
-                pariatur aspernatur ipsum iusto rerum dignissimos nostrum, autem porro.</h6>
-        </div>
-        <div class="feed-item">
-            <h2>Post Title</h2>
-        </div>
-        <div class="feed-item post-title">
-            <h5>Post By: John Doe // Total Followers: 777</h5>
-            <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat nihil aperiam temporibus error
-                officia
-                expedita doloremque facilis quis quaerat. Facilis aut ex necessitatibus quibusdam porro possimus?
-                Repellendus quisquam blanditiis magnam. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Aliquam delectus alias omnis? Facere quis eos expedita nisi veritatis quibusdam excepturi, ab nobis
-                vero
-                iste quia, omnis nulla dolor dolorum ipsum. Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit.
-                Corrupti magnam tempore culpa. Ipsam ex excepturi explicabo minima sint laudantium maiores, alias
-                cum
-                sed quo, corporis inventore. Numquam harum ullam alias? Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Non impedit quos rerum perferendis illo alias asperiores debitis blanditiis
-                aliquam,
-                excepturi consectetur veniam, nesciunt ipsam obcaecati delectus nihil repudiandae, adipisci neque?
-                Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Animi adipisci porro, quasi aspernatur dicta
-                fugit
-                harum repellendus vitae? Aliquam quis perspiciatis officiis earum, adipisci nam placeat! Numquam
-                perspiciatis labore at. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam cumque sunt,
-                ipsa magni accusantium explicabo et tempora nobis atque adipisci fuga molestiae nulla corrupti
-                labore
-                reiciendis, eaque sed? Mollitia, a. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Excepturi
-                accusamus necessitatibus dolore quam vitae architecto numquam sapiente illum commodi incidunt optio
-                pariatur aspernatur ipsum iusto rerum dignissimos nostrum, autem porro.</h6>
-        </div>
-        <div class="feed-item">
-            <h2>Post Title</h2>
-        </div>
-        <div class="feed-item post-title">
-            <h5>Post By: John Doe // Total Followers: 777</h5>
-            <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat nihil aperiam temporibus error
-                officia
-                expedita doloremque facilis quis quaerat. Facilis aut ex necessitatibus quibusdam porro possimus?
-                Repellendus quisquam blanditiis magnam. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Aliquam delectus alias omnis? Facere quis eos expedita nisi veritatis quibusdam excepturi, ab nobis
-                vero
-                iste quia, omnis nulla dolor dolorum ipsum. Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit.
-                Corrupti magnam tempore culpa. Ipsam ex excepturi explicabo minima sint laudantium maiores, alias
-                cum
-                sed quo, corporis inventore. Numquam harum ullam alias? Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Non impedit quos rerum perferendis illo alias asperiores debitis blanditiis
-                aliquam,
-                excepturi consectetur veniam, nesciunt ipsam obcaecati delectus nihil repudiandae, adipisci neque?
-                Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Animi adipisci porro, quasi aspernatur dicta
-                fugit
-                harum repellendus vitae? Aliquam quis perspiciatis officiis earum, adipisci nam placeat! Numquam
-                perspiciatis labore at. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam cumque sunt,
-                ipsa magni accusantium explicabo et tempora nobis atque adipisci fuga molestiae nulla corrupti
-                labore
-                reiciendis, eaque sed? Mollitia, a. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Excepturi
-                accusamus necessitatibus dolore quam vitae architecto numquam sapiente illum commodi incidunt optio
-                pariatur aspernatur ipsum iusto rerum dignissimos nostrum, autem porro.</h6>
-        </div>
-    </div>
+  <!-- PROFILE PAGE CONTENT TO GO IN THE {{{ body }}} -->
+  <!-- ///////// Page Tile Row ////////////// -->
+  <div class="feed-card">
+    {{> post-info}}
+  </div>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  </script>
+  <script>
+      gsap.from('.feed-item', { opacity: .25, duration: 1.50, y: 50, ease: 'Power2.ease' })
+      gsap.from('.feed-card', { opacity: 0, duration: 1.5, ease: 'Power2.ease' })
+      gsap.from('.post-title', { opacity: .50, duration: 1, x: 50, ease: 'Power2.ease' })
 
-    <script>
-        gsap.from('.feed-item', { opacity: .25, duration: 1.50, y: 50, ease: 'Power2.ease' })
-        gsap.from('.feed-card', { opacity: 0, duration: 1.5, ease: 'Power2.ease' })
-        gsap.from('.post-title', { opacity: .50, duration: 1, x: 50, ease: 'Power2.ease' })
-    </script>
-
+      $(document).ready(() => {
+        $(document.body).on('click', '.feed-post', (e) => {
+          var href = $(e.currentTarget).data('href');
+          window.location = href;
+        });
+      });
+  </script>
 </body>

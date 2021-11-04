@@ -38,25 +38,24 @@
                             <!-- start of Nessted login input field -->
                             <div class="row">
                                 <div class="box">
-                                    <div>
+                                    <form class="login-form">
                                         <div class="col-12 d-flex justify-content-center">
-                                            <Input class="fullFormLite createLOGIN" id="email"
-                                                placeholder="Email"></Input>
+                                            <input class="fullFormLite createLOGIN" id="email"
+                                                placeholder="Email"></input>
                                         </div></br>
                                         <div class="col-12 d-flex justify-content-center">
-                                            <Input class="fullFormLite createLOGIN" type="password" id="password"
-                                                placeholder="Password"></Input>
+                                            <input class="fullFormLite createLOGIN" type="password" id="password"
+                                                placeholder="Password"></input>
                                         </div>
                                         </br>
                                         <div class="col-12 d-flex justify-content-center">
-                                            <button class="btncreate LOGIN bold" id="login">LOGIN</button>
+                                            <button class="btncreate LOGIN bold" id="login" type="submit">LOGIN</button>
                                         </div>
+                                    </form>
                                         <div class="col-12 d-flex justify-content-center">
-
                                             <a class="d-flex justify-content-center Followers padding" href="/signup"
                                                 id="memLink"><br>Create Account</a>
                                         </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -72,7 +71,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
-        $(document).on("click", "#login", function () {
+        $('.login-form').on("submit", function () {
 
             let newUser = {
                 email: $("#email").val(),
