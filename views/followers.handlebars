@@ -1,4 +1,5 @@
 <body>
+
   <head>
     <link rel="stylesheet" href="../../public/stylesheets/styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -7,36 +8,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   </head>
-  
+
   <nav class="justify-content-center">
     <ul class="row justify-content-around">
       <a href="/" class="link">
         <li>Feed</li>
       </a>
+      <a href="/create-post" class="link">
+        <li>Create A Review</li>
+      </a>
       <a href="/profile" class="link">
         <li>Profile</li>
       </a>
-      <a href="/create-post" class="link">
-        <li>Create a Review</li>
-      </a>
     </ul>
   </nav>
-  
+
   <div class="profile-card">
     <div class="row justify-content-center user-follower">
       {{#each user.followers as |follower|}}
-  
+
       <div>
         <a href="/user/{{follower.id}}" class="Followers">{{follower.username}}</a>
       </div>
-  
+
       {{/each}}
     </div>
   </div>
-  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
 
   <script>
-      gsap.from('.user-follower', { opacity: 0, duration: 2.5, ease: 'Power2.easeInOut' });
+    gsap.from('.user-follower', { opacity: 0, duration: 2.5, ease: 'Power2.easeInOut' });
   </script>
-  </body>
+</body>
