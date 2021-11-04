@@ -55,7 +55,7 @@ label {
 }
 
 .profile-card {
-    height: 95vh;
+    min-height: 100vh;
     color: white;
     padding: 25px;
     border-style: solid;
@@ -65,7 +65,6 @@ label {
 }
 
 .single-post-card {
-    height: 150vh;
     color: white;
     padding: 25px;
     border-style: solid;
@@ -75,7 +74,7 @@ label {
 }
 
 .create-card {
-    height: 100vh;
+    min-height: 100vh;
     color: white;
     padding: 25px;
     border-style: solid;
@@ -88,9 +87,26 @@ label {
     margin-top: 350px;
 }
 
+.follow-btn-area {
+    margin: 2% auto;
+    width: 10%;
+}
+
+.follow-btn {
+    background-color: blue;
+}
+
+.follow-btn:hover {
+    background-color: rgb(8, 8, 85);
+}
+
+.follow-btn, .unfollow-btn {
+    width: 100%;
+}
+
 .feed-card {
     /* margin-top: -16; */
-    height: 150vh;
+    min-height: 100vh;
     color: white;
     padding:25px;
     border-style: solid;
@@ -107,7 +123,7 @@ label {
 }
 
 .post-card{
-    height: 95vh;
+    min-height: 95vh;
     color: white;
     padding: 25px;
     border-style: solid;
@@ -121,9 +137,17 @@ label {
     background-color: rgba(33, 33, 33, .33); 
 }
 
+.review-text {
+    font-size: 1.45rem;
+}
+
+.user-created-info {
+    font-size: 1rem;
+}
+
 .comment-form {
     height: 10vh;
-    width: 75vh;
+    width: 100%;
 }
 
 .follows {

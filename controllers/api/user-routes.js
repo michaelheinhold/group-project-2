@@ -113,7 +113,7 @@ router.post('/logout', withAuth, (req, res) => {
 router.post('/:id/follow', (req, res) => {
   UserFollowers.create({
     user_id: req.params.id,
-    follower_id: req.body.follower_id
+    follower_id: req.session.user_id
   })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => res.status(500).json(err));
@@ -123,7 +123,7 @@ router.post('/:id/unfollow', (req, res) => {
   UserFollowers.destroy({
     where: {
       user_id: req.params.id,
-      follower_id: req.body.follower_id
+      follower_id: req.session.user_id
     }
   })
     .then(dbUserData => res.json(dbUserData))
