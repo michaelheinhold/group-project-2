@@ -1,65 +1,64 @@
 <body>
     {{> navbar}}
     <div>
-        <div class="main content post-card">
-            <div class="subject col-3 review">
-                Write Your own review
-                <div>
-                    <form class="justify-content-center">
-                        <label for="title">What is the name of the movie you are reviewing?</label></br>
-                        <input type="text" placeholder="" name="title" id="title" class="title" /></br></br>
+        <div class="main content post-card justify-content-center">
+            <div class="container col-3">
+                <div class="subject review">
+                    <div class="justify-content-center">
 
-                        <label for="url">What is the link for a trailer of this film?</label>
-                        <input type="text" placeholder="" name="post_url" id="post_url" class="post_url" /></br></br>
+                        <form class="justify-content-center feed-card">
+                                                    <h2 class="bold"> Write A Review </h2></br>
+                            <label for="title">What is the name of the movie you are reviewing?</label></br>
+                            <input type="text" placeholder="" name="title" id="title" class="title" /></br></br>
 
-                        <label for="review">Write your review below.</label>
-                        <textarea type="text" name="review-review" id="review-review" rows="5" class="review-review"
-                            placeholder="Enter your review here"></textarea></br>
+                            <label for="url">What is the link for a trailer of this film?</label>
+                            <input type="text" placeholder="" name="post_url" id="post_url"
+                                class="post_url" /></br></br>
 
-                        {{!-- <label for="review"></label>
-                        <textarea type="text" name="review-review" id="review-review" class="review-review"></textarea>
-                        </br> --}}
-                        </br>
+                            <label for="review">Write your review below.</label>
+                            <textarea type="text" name="review-review" id="review-review" rows="5" class="review-review"
+                                placeholder=""></textarea></br>
+                            </br>
 
-                        <button type="submit" id="newPost" class="bold">Submit</button>
+                            <button type="submit" id="newPost" class="bold">Submit</button>
+                    </div>
+                    </form>
                 </div>
-                </form>
             </div>
         </div>
-    </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        $(document).on("click", "#newPost", function () {
-            event.preventDefault();
-            const review = document.querySelector('textarea[name="review-review"]').value;
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            $(document).on("click", "#newPost", function () {
+                event.preventDefault();
+                const review = document.querySelector('textarea[name="review-review"]').value;
 
-            let newPost = {
-                title: $("#title").val(),
-                review,
-                post_url: $("#post_url").val()
-            };
+                let newPost = {
+                    title: $("#title").val(),
+                    review,
+                    post_url: $("#post_url").val()
+                };
 
-            console.log(newPost);
+                console.log(newPost);
 
-            $.ajax({
-                url: "/api/posts",
-                method: "POST",
-                data: newPost
-            }).then(function (response) {
-                console.log(response);
-                window.location = "/home";
+                $.ajax({
+                    url: "/api/posts",
+                    method: "POST",
+                    data: newPost
+                }).then(function (response) {
+                    console.log(response);
+                    window.location = "/home";
+                })
             })
-        })
-    </script>
+        </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
 
-    <script>
-        gsap.from('.review', { opacity: 0, duration: 2.5, ease: 'Power2.easeInOut' });
-    </script>
+        <script>
+            gsap.from('.review', { opacity: 0, duration: 2.5, ease: 'Power2.easeInOut' });
+        </script>
 
 
 </body>
