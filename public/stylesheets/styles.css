@@ -80,7 +80,7 @@ label {
 
 .feed-card {
     /* margin-top: -16; */
-    height: 95vh;
+    height: 150vh;
     color: white;
     padding:25px;
     border-style: solid;
@@ -106,7 +106,8 @@ label {
 }
 
 .post-title {
-    background-color: rgba(33, 33, 33, .50); 
+    margin-top: -15px;
+    background-color: rgba(33, 33, 33, .33); 
 }
 
 .Followers {
