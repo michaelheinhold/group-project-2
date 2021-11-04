@@ -13,40 +13,39 @@
 
   <div class="feed-card">
     <div class="justify-content-center post-transition post-title feed-item">
-      <div class="post-item">
-
+      <div class="post-title">
         <h2 class="bold">{{post.title}}</h2>
-        <h5>{{format_dates post.createdAt}}</h5>
-        <h5>{{post.user.username}}</h5>
-
-        <h6>{{post.review}}</h6>
-
-        {{#if loggedIn}}
-
-      </div></br>
-      <div>
- 
-          {{#each post.comments as |comment|}}
-          <div class="comment-item container"></div>
-          {{comment.comment_text}}
-          by {{comment.user.username}}
-          {{/each}}
-                            </div>
-
+        <p class="user-created-info">{{format_dates post.createdAt}} by <a href="/user/{{post.user.id}}">{{post.user.username}}</a></p>
+        <p class="review-text">{{post.review}}</p>
       </div>
-
-      <div class="comment-form">
-        <h5 class="bold">Comments</h5>
-        <h5>write a comment:</h5>
-        <form class="justify-content-center">
-          <textarea name="comment" id="comment" cols="30" rows="5" class="comment-form"></textarea></br></br>
-          <button type="submit" class="comment-btn bold">COMMENT</button>
-        </form>
+        <h4 class="bold col-12 mt-5">Comments</h4>
+        {{#if loggedIn}}
+          <form class="justify-content-center comment-form">
+            <div>
+              <textarea name="comment" id="comment" cols="30" rows="5" class="comment-form"></textarea></br></br>
+            </div>
+            <div>
+              <button type="submit" class="comment-btn bold">COMMENT</button>
+            </div>
+          </form>
+        {{/if}}
+      </div>
+      <div>
+        {{#each post.comments as |comment|}}
+          <div class="comment-item container">
+            <div class="feed-item">
+              {{comment.user.username}} commented:
+            </div>
+            <div class="feed-item post-title">
+              {{comment.comment_text}}
+            </div>
+          </div>
+        {{/each}}
       </div>
     </div>
   </div>
 
-
+{{#if loggedIn}}
   <script>
     async function commentFormHandler(event) {
       event.preventDefault();

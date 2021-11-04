@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const { User, Post, Comment } = require('../models');
+const { User, Post, Comment, UserFollowers } = require('../models');
 const withAuth = require('../utils/withAuth');
+const isYou = require('../utils/isYou');
 
 router.get('/', (req, res) => {
   if(req.session.user_id){
@@ -103,24 +104,39 @@ router.get('/post/:id', (req, res) => {
     .catch(err => res.status(500).json(err));
 })
 
-router.get('/user/:id', (req, res) => {
+router.get('/user/:id', isYou, (req, res) => {
   User.findOne({
     where: {
       id: req.params.id
     },
     attributes: ['username', 'id'],
-    include: ['followers', 'following', {
-      model: Post,
-      key: 'user_id',
-      include: {
-        model: Comment,
-        key: 'post_id'
-      }
-    }]
+    include: ['followers', 'following', 
+      {
+        model: Post,
+        key: 'user_id',
+        include: {
+          model: Comment,
+          key: 'post_id'
+        }
+      },
+    ]
   })
     .then(dbUserData => {
       const user = dbUserData.get({ plain: true });
-      res.render('user-page', { user, loggedIn: req.session.loggedIn });
+      //filters followers array and returns an object if current session user is following user that is being visited
+      const followers = user.followers.filter(e => {
+        if(e.id !== req.session.user_id) {
+          return false
+        }
+        return true
+      });
+      let isFollowing;
+        if(followers.length === 0) {
+          isFollowing = false
+        } else {
+          isFollowing = true;
+        }
+      res.render('user-page', { user, loggedIn: req.session.loggedIn, isFollowing });
     })
     .catch(err => res.status(500).json(err))
 })
