@@ -55,11 +55,7 @@ label {
 }
 
 .profile-card {
-<<<<<<< HEAD
-    height: 150vh;
-=======
     min-height: 100vh;
->>>>>>> finaltouches/michael
     color: white;
     padding: 25px;
     border-style: solid;
