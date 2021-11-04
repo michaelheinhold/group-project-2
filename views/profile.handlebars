@@ -20,14 +20,14 @@
     <!-- ///////// Page Tile Row ////////////// -->
     <div class="profile-card">
 
-        <div class="row">
+        <div class="row profile-item">
             <div class="col-12 d-flex justify-content-center">
                 <h1>{{username}}</h1>
             </div>
         </div>
 
         <!-- ///////// START OF Two Column Content ////////////// -->
-        <div class="row">
+        <div class="row profile-item">
             <!-- ///////// START OF First Column ////////////// -->
             <div class="col-sm-12 col-lg-12">
                 <!-- ///////// START OF Profile Info ////////////// -->
@@ -75,7 +75,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
 
     <script>
-        gsap.from('.profile-card', { opacity: 0, duration: 1.25, ease: 'Power2.easeInOut' });
+        gsap.from('.profile-item', { opacity: 0, duration: 1.5, ease: 'Power2.easeInOut' });
     </script>
 
 </body>
