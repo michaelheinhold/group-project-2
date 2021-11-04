@@ -1,9 +1,9 @@
 body {
-    background-image: url(/assets/background.jpg);
+    background-image: url(../assets/background.jpg);
 }
 
 header {
-    background-image: url("/assets/background.jpg");
+    background-image: url("../assets/background.jpg");
     background-color: white;
     height: 250px;
     display: block;
