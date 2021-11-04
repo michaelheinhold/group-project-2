@@ -12,7 +12,7 @@ header {
 
 nav {
     font-size: large;
-    font-weight: 700;
+    font-weight: 750;
     color: white;
     background-color:black;
     height: 6vh;
@@ -25,6 +25,10 @@ ul {
 
 img {
     border-radius: 100px;
+}
+
+label {
+    font-weight: 700;
 }
 
 .bold {
@@ -93,7 +97,7 @@ img {
 }
 
 .post-card{
-    height: 950px;
+    height: 95vh;
     color: white;
     padding: 25px;
     border-style: solid;
@@ -150,6 +154,10 @@ img {
 
 .margin {
     margin-right: 20px;
+}
+
+textarea:focus {
+    outline: none !important;
 }
 
 input {
