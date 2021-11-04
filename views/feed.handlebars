@@ -3,29 +3,29 @@
   <!-- PROFILE PAGE CONTENT TO GO IN THE {{{ body }}} -->
   <!-- ///////// Page Tile Row ////////////// -->
 
-        {{!-- POST TITLE TO GO HERE --}}
- <div class="feed-card"
+  {{!-- POST TITLE TO GO HERE --}}
+  <div class="feed-card">
     <div class="feed-item post-title">
-        {{!-- POST INFO TO GO HERE --}}
-        {{> post-info}}
+      {{!-- POST INFO TO GO HERE --}}
+      {{> post-info}}
     </div>
-    </div>
+  </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-      crossorigin="anonymous" referrerpolicy="no-referrer">
-      </script>
-    <script>
-      gsap.from('.feed-item', { opacity: .25, duration: 1.50, y: 50, ease: 'Power2.ease' })
-      gsap.from('.feed-card', { opacity: 0, duration: 1.5, ease: 'Power2.ease' })
-      gsap.from('.post-title', { opacity: .50, duration: 1, x: 50, ease: 'Power2.ease' })
-
-      $(document).ready(() => {
-        $(document.body).on('click', '.feed-post', (e) => {
-          var href = $(e.currentTarget).data('href');
-          window.location = href;
-        });
-      });
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
     </script>
+  <script>
+    gsap.from('.feed-item', { opacity: .25, duration: 1.50, y: 50, ease: 'Power2.ease' })
+    gsap.from('.feed-card', { opacity: 0, duration: 1.5, ease: 'Power2.ease' })
+    gsap.from('.post-title', { opacity: .50, duration: 1, x: 50, ease: 'Power2.ease' })
+
+    $(document).ready(() => {
+      $(document.body).on('click', '.feed-post', (e) => {
+        var href = $(e.currentTarget).data('href');
+        window.location = href;
+      });
+    });
+  </script>
 </body>
