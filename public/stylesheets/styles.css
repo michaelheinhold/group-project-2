@@ -64,6 +64,16 @@ label {
     background-color:rgba(0, 0, 0, .98);
 }
 
+.single-post-card {
+    height: 150vh;
+    color: white;
+    padding: 25px;
+    border-style: solid;
+    border-width: thin;
+    border-color: rgba(0, 0, 0, 1);
+    background-color:rgba(0, 0, 0, .98);
+}
+
 .create-card {
     height: 100vh;
     color: white;
