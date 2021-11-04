@@ -1,0 +1,7 @@
+{{#each user.following as |followee|}}
+
+<div>
+  <a href="/user/{{followee.id}}">{{followee.username}}</a>
+</div>
+
+{{/each}}

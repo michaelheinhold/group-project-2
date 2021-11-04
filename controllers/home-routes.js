@@ -88,6 +88,21 @@ router.get('/:id/followers', (req, res) => {
     res.render('followers', { user, loggedIn: true });
     })
   .catch(err => res.status(500).json(err))
-})
+});
+
+router.get('/:id/following', (req, res) => {
+  User.findOne({
+    where: {
+      id: req.params.id
+    },
+    include: ['following']
+  })
+    .then(dbUserData => {
+    const user = dbUserData.get({ plain: true });
+    console.log(user)
+    res.render('following', { user, loggedIn: true });
+    })
+  .catch(err => res.status(500).json(err))
+});
 
 module.exports = router;
