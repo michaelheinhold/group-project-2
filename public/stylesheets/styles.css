@@ -55,7 +55,7 @@ label {
 }
 
 .profile-card {
-    height: 95vh;
+    height: 150vh;
     color: white;
     padding: 25px;
     border-style: solid;
@@ -154,11 +154,10 @@ label {
 }
 
 .followers-number, .following-number {
-    background-color: grey;
-    color: black;
+    color: green;
     padding: 2px;
     font-weight: 900;
-    border-radius: 50px;
+    border-radius: 100px;
 }
 
 .review-review {
