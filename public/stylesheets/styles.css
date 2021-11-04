@@ -23,6 +23,15 @@ ul {
     list-style-type: none;
 }
 
+.link {
+    color: grey;
+}
+
+.link:hover {
+    text-decoration: none;
+    color: inherit
+}
+
 .data-card {
     color: white;
     padding: 25px;
@@ -68,7 +77,7 @@ ul {
     border-style: solid;
     border-width: thin;
     border-color: rgba(0, 0, 0, 1);
-    background-color:rgba(134, 75, 75, 0.9);
+    background-color:rgba(0, 0, 0, 0.9);
 }
 
 .followers {
@@ -98,8 +107,9 @@ ul {
     border-radius: 50px;
 }
 
-input {
-    padding-top: 10px;
+.review-review {
+    height: 200px;
+    width: 500px;
 }
 
 input:focus {
