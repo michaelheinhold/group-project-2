@@ -5,7 +5,7 @@ body {
 header {
     background-image: url("../assets/background.jpg");
     background-color:rgba(0, 0, 0, .99);
-    height: 200px;
+    height: 350px;
     display: block;
     position: relative;
 }
@@ -75,7 +75,7 @@ label {
 }
 
 .login-create {
-    margin-top: 200px;
+    margin-top: 350px;
 }
 
 .feed-card {
@@ -93,7 +93,7 @@ label {
     margin: 15px;
     padding: 15px;
     border-radius: 15px;
-    background-color: rgba(10, 10, 10, .95);
+    background-color: rgba(33, 33, 33, .95);
 }
 
 .post-card{
