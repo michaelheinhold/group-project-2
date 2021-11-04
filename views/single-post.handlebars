@@ -20,25 +20,23 @@
         <h5>{{post.user.username}}</h5>
         <h6>{{post.review}}</h6>
 
-        {{/if}}
-
-        {{#each post.comments as |comment|}}
-        {{comment.comment_text}}
-        by {{comment.user.username}}
-        {{/each}}
-
         {{#if loggedIn}}
 
       </div></br>
       <div class="container comment-form">
         <h5 class="bold">Comments</h5>
-        <h5>{{#if loggedIn}} write a comment:</h5>
+        <h5>write a comment:</h5>
         <form class="justify-content-center">
           <textarea name="comment" id="comment" cols="30" rows="5" class="comment-form"></textarea></br></br>
           <button type="submit" class="comment-btn bold">COMMENT</button>
         </form>
       </div>
-
+      <div>
+        {{#each post.comments as |comment|}}
+        {{comment.comment_text}}
+        by {{comment.user.username}}
+        {{/each}}
+      </div>
     </div>
   </div>
 
