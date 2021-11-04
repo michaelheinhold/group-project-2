@@ -72,7 +72,7 @@
 
     <script>
         $('.login-form').on("submit", function () {
-
+            event.preventDefault();
             let newUser = {
                 email: $("#email").val(),
                 password: $("#password").val()

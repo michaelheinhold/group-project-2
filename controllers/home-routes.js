@@ -16,8 +16,10 @@ router.get('/home', (req, res) => {
       'title',
       'post_url',
       'review',
-      'user_id'
+      'user_id',
+      'createdAt'
     ],
+    order: [['createdAt', 'DESC']],
     include: [
       {
         model: Comment,

@@ -4,7 +4,7 @@
       <h2>{{post.title}}</h2>
     </div>
     <div class="feed-item post-title">
-      <h5>Post By: <a href="/user/{{post.user.id}}">{{post.user.username}}</a> // Comments: {{post.comments.length}}</h5>
+      <h5>Post By: <a href="/user/{{post.user.id}}">{{post.user.username}}</a> created {{format_dates post.createdAt}} // Comments: {{post.comments.length}}</h5>
       <h6>{{post.review}}</h6>
     </div>
   </div>
