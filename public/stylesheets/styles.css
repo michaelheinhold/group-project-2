@@ -4,10 +4,23 @@ body {
 
 header {
     background-image: url("../assets/background.jpg");
-    background-color: white;
+    background-color: black;
     height: 250px;
     display: block;
     position: relative;
+}
+
+nav {
+    font-size: large;
+    font-weight: 700;
+    color: white;
+    background-color:black;
+    height: 50px;
+    padding: 10px;
+}
+
+ul {
+    list-style-type: none;
 }
 
 .data-card {
@@ -30,6 +43,24 @@ header {
     background-color:rgba(0, 0, 0, .90);
 }
 
+.feed-card {
+    /* margin-top: -16; */
+    height: 881px;
+    color: white;
+    padding:25px;
+    border-style: solid;
+    border-width: thin;
+    border-color: rgba(0, 0, 0, 1);
+    background-color:rgba(0, 0, 0, .90);
+}
+
+.feed-item {
+    margin: 15px;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgba(10, 10, 10, .95);
+}
+
 .post-card{
     height: 950px;
     color: white;
@@ -37,7 +68,33 @@ header {
     border-style: solid;
     border-width: thin;
     border-color: rgba(0, 0, 0, 1);
-    background-color:rgba(0, 0, 0, .90);
+    background-color:rgba(134, 75, 75, 0.9);
+}
+
+.followers {
+    margin-top: 25;
+    color: white;
+}
+
+.following {
+    margin-top: 25;
+    text-decoration: none;
+    color: white;  
+}
+
+.followers-number {
+    background-color: white;
+    color: black;
+    padding: 5;
+    font-weight: 900;
+    border-radius: 50px;
+}
+.following-number {
+    background-color: white;
+    color: black;
+    padding: 5;
+    font-weight: 900;
+    border-radius: 50px;
 }
 
 input {
