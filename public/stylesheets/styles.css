@@ -92,7 +92,6 @@ label {
 .feed-item {
     margin: 15px;
     padding: 15px;
-    border-radius: 15px;
     background-color: rgba(33, 33, 33, .95);
 }
 
@@ -104,6 +103,10 @@ label {
     border-width: thin;
     border-color: rgba(0, 0, 0, 1);
     background-color:rgba(0, 0, 0, 0.98);
+}
+
+.post-title {
+    background-color: rgba(33, 33, 33, .50); 
 }
 
 .Followers {
