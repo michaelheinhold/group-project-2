@@ -1,0 +1,26 @@
+<body>
+  {{> navbar}}
+
+  <div class="profile-card">
+    <div class="row profile-item">
+      <div class="col-12 d-flex justify-content-center">
+        <h1>Followers for {{user.username}}</h1>
+      </div>
+    </div>
+    <div class="row justify-content-center user-follower">
+      {{#each user.followers as |follower|}}
+
+      <div class="col-12 follows">
+        <a href="/user/{{follower.id}}" class="Followers">{{follower.username}}</a>
+      </div>
+
+      {{/each}}
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+
+  <script>
+    gsap.from('.user-follower', { opacity: 0, duration: 2.5, ease: 'Power2.easeInOut' });
+  </script>
+</body>

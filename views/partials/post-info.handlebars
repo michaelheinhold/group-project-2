@@ -1,0 +1,11 @@
+{{#each posts as |post|}}
+  <div class="feed-post"  data-href="/post/{{post.id}}">
+    <div class="feed-item">
+      <h2>{{post.title}}</h2>
+    </div>
+    <div class="feed-item post-title">
+      <h5>Post By: <a href="/user/{{post.user.id}}">{{post.user.username}}</a> created {{format_dates post.createdAt}} // Comments: {{post.comments.length}}</h5>
+      <p class="review-text">{{post.review}}</p>
+    </div>
+  </div>
+{{/each}}

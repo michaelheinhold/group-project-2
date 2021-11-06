@@ -1,0 +1,108 @@
+<body>
+    {{> navbar}}
+
+    <!-- PROFILE PAGE CONTENT TO GO IN THE {{{ body }}} -->
+    <!-- ///////// Page Tile Row ////////////// -->
+    <div class="profile-card">
+
+        <div class="row profile-item">
+            <div class="col-12 d-flex justify-content-center">
+                <h1 class="bold">{{user.username}}</h1>
+            </div>
+        </div>
+
+
+        <!-- ///////// START OF Two Column Content ////////////// -->
+        {{> profile-content}}
+
+        <div class="follow-btn-area">
+            {{#if isFollowing}}
+            <button class="unfollow-btn profile-item">Unfollow</button>
+            {{else}}
+            <button class="follow-btn profile-item">Follow</button>
+            {{/if}}
+        </div>
+        </br>
+        <div class="row posts profile-item justify-content-center">
+            <div class="col-12 d-flex justify-content-center">
+                <h2 class="bold">{{user.username}}'s Posts ({{user.posts.length}})</h2>
+            </div>
+            <div class="justify-content-center">
+                {{#each user.posts as |post|}}
+                <div class="clickable-link" data-href="/post/{{post.id}}">
+                    <div class="feed-item d-flex justify-content-center">
+                        <h2 class="bold">{{post.title}}</h2>
+                    </div>
+                    <div class="feed-item post-title">
+                        <h5>Posted: {{format_dates post.createdAt}} // Comments: {{post.comments.length}}</h5>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+
+    <script>
+        gsap.from('.profile-item', { opacity: 0, duration: 1.5, ease: 'Power2.easeInOut' });
+
+        $(document).ready(() => {
+            $(document.body).on('click', '.clickable-link', (e) => {
+                var href = $(e.currentTarget).data('href');
+                window.location = href;
+            });
+        });
+    </script>
+
+    {{#if isFollowing}}
+    <script>
+        async function unfollowHandler(event) {
+            event.preventDefault();
+            const user_id = window.location.toString().split('/')[
+                window.location.toString().split('/').length - 1
+            ];
+
+            const response = await fetch(`/api/users/${user_id}/unfollow`, {
+                method: 'post',
+                headers: { 'Content-Type': 'application/json' }
+            });
+
+            if(response.ok) {
+                window.location.reload();
+            } else {
+                alert(response.statusText)
+            }
+        }
+
+        document.querySelector('.unfollow-btn').addEventListener('click', unfollowHandler);
+    </script>
+    {{else}}
+    <script>
+        async function followHandler(event) {
+            event.preventDefault();
+            const user_id = window.location.toString().split('/')[
+                window.location.toString().split('/').length - 1
+            ];
+
+            const response = await fetch(`/api/users/${user_id}/follow`, {
+                method: 'post',
+                headers: { 'Content-Type': 'application/json' }
+            });
+
+            if(response.ok) {
+                window.location.reload();
+            } else {
+                alert(response.statusText)
+            }
+        }
+
+        document.querySelector('.follow-btn').addEventListener('click', followHandler);
+    </script>
+    {{/if}}
+</body>

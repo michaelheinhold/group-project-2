@@ -1,0 +1,235 @@
+body {
+    background-image: url(../assets/background.jpg);
+}
+
+header {
+    background-image: url("../assets/background.jpg");
+    background-color:rgba(0, 0, 0, .99);
+    height: 350px;
+    display: block;
+    position: relative;
+}
+
+nav {
+    font-size: large;
+    font-weight: 750;
+    color: white;
+    background-color:black;
+    height: 6vh;
+    padding: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    border-radius: 100px;
+}
+
+label {
+    font-weight: 700;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+.link {
+    color: white;
+}
+
+.link:hover {
+    text-decoration: none;
+    color: inherit
+}
+
+.data-card {
+    color: white;
+    padding: 25px;
+    border-style: solid;
+    border-width: thin;
+    border-color: rgba(0, 0, 0, 1);
+    background-color:rgba(0, 0, 0, .99);
+    /* border-radius: 15px; */
+}
+
+.profile-card {
+    min-height: 100vh;
+    color: white;
+    padding: 25px;
+    border-style: solid;
+    border-width: thin;
+    border-color: rgba(0, 0, 0, 1);
+    background-color:rgba(0, 0, 0, .98);
+}
+
+.single-post-card {
+    color: white;
+    padding: 25px;
+    border-style: solid;
+    border-width: thin;
+    border-color: rgba(0, 0, 0, 1);
+    background-color:rgba(0, 0, 0, .98);
+}
+
+.create-card {
+    min-height: 100vh;
+    color: white;
+    padding: 25px;
+    border-style: solid;
+    border-width: thin;
+    border-color: rgba(0, 0, 0, 1);
+    background-color:rgba(0, 0, 0, .98);
+}
+
+.login-create {
+    margin-top: 350px;
+}
+
+.follow-btn-area {
+    margin: 2% auto;
+    width: 10%;
+}
+
+.follow-btn {
+    background-color: blue;
+}
+
+.follow-btn:hover {
+    background-color: rgb(8, 8, 85);
+}
+
+.follow-btn, .unfollow-btn {
+    width: 100%;
+}
+
+.feed-card {
+    /* margin-top: -16; */
+    min-height: 100vh;
+    color: white;
+    padding:25px;
+    border-style: solid;
+    border-width: thin;
+    border-color: rgba(0, 0, 0, 1);
+    background-color:rgba(0, 0, 0, .95);
+}
+
+.feed-item {
+    margin: 15px;
+    padding: 15px;
+    background-color: rgba(33, 33, 33, .95);
+    cursor: pointer;
+}
+
+.post-card{
+    min-height: 95vh;
+    color: white;
+    padding: 25px;
+    border-style: solid;
+    border-width: thin;
+    border-color: rgba(0, 0, 0, 1);
+    background-color:rgba(0, 0, 0, 0.98);
+}
+
+.post-title {
+    margin-top: -15px;
+    background-color: rgba(33, 33, 33, .33); 
+}
+
+.review-text {
+    font-size: 1.45rem;
+}
+
+.user-created-info {
+    font-size: 1rem;
+}
+
+.comment-form {
+    height: 10vh;
+    width: 100%;
+}
+
+.follows {
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.Followers {
+    margin-top: 25;
+    font-weight: 700;
+    color: white;
+}
+
+.Following {
+    margin-top: 25;
+    font-weight: 700;
+    color: white;  
+}
+
+.Followers:hover {
+    text-decoration: none;
+    color: grey
+}
+
+.Following:hover {
+    text-decoration: none;
+    color: grey
+}
+
+.followers-number, .following-number {
+    color: green;
+    padding: 2px;
+    font-weight: 900;
+    border-radius: 100px;
+}
+
+.review-review {
+    width: 500px;
+}
+
+.padding {
+    padding-bottom: 10px;
+}
+
+.margin {
+    margin-right: 20px;
+}
+
+textarea:focus {
+    outline: none !important;
+}
+
+input {
+    text-align: center;
+    width: 250px;
+}
+
+input:focus {
+    outline-width:0;
+}
+
+button {
+    outline: none;
+    color: white;
+    border: none;
+    height: 33px;
+    width: 100px;
+    background-color: red;
+}
+button:focus {
+    outline:none !important;
+}
+
+button:hover {
+    background-color: rgba(255, 0, 0, 0.671);
+}
+
+#memlink {
+    color: white;
+    text-decoration: none;
+}
+
+#memlink:hover {
+    color: grey;
+}

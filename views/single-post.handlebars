@@ -1,0 +1,86 @@
+<body>
+
+  <head>
+    <link rel="stylesheet" href="../../public/stylesheets/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  </head>
+
+  {{> navbar}}
+
+  <div class="feed-card">
+    <div class="justify-content-center post-transition post-title feed-item">
+      <div class="post-title">
+        <h2 class="bold">{{post.title}}</h2>
+        <p class="user-created-info">{{format_dates post.createdAt}} by <a href="/user/{{post.user.id}}">{{post.user.username}}</a></p>
+        <p class="review-text">{{post.review}}</p>
+      </div>
+        <h4 class="bold col-12 mt-5">Comments</h4>
+        {{#if loggedIn}}
+          <form class="justify-content-center comment-form">
+            <div>
+              <textarea name="comment" id="comment" cols="30" rows="5" class="comment-form"></textarea></br></br>
+            </div>
+            <div>
+              <button type="submit" class="comment-btn bold">COMMENT</button>
+            </div>
+          </form>
+        {{/if}}
+      </div>
+      <div>
+        {{#each post.comments as |comment|}}
+          <div class="comment-item container">
+            <div class="feed-item">
+              {{comment.user.username}} commented:
+            </div>
+            <div class="feed-item post-title">
+              {{comment.comment_text}}
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+
+{{#if loggedIn}}
+  <script>
+    async function commentFormHandler(event) {
+      event.preventDefault();
+
+      const post_id = window.location.toString().split('/')[
+        window.location.toString().split('/').length - 1
+      ];
+      const comment_text = document.querySelector('textarea[name="comment"]').value;
+
+      const response = await fetch('/api/comments', {
+        method: 'post',
+        body: JSON.stringify({
+          comment_text,
+          post_id
+        }),
+        headers: { 'Content-Type': 'application/json' }
+      })
+
+      if (response.ok) {
+        window.location.reload();
+      } else {
+        alert(response.statusText);
+      }
+    }
+
+    document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
+  </script>
+  {{/if}}
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+
+  <script>
+    gsap.from('.single-post-card', { opacity: .95, duration: 1.50, y: 0, ease: 'Power2.ease' })
+    {{!-- gsap.from('.feed-item', { opacity: 0, duration: 1.5, ease: 'Power2.ease' }) --}}
+    gsap.from('.feed-item', { opacity: .50, duration: 1, x: 50, ease: 'Power2.ease' })
+  </script>
+
+</body>
