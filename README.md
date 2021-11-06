@@ -14,7 +14,7 @@
   
   ## Languages 
   
-  js
+  JavaScript
   
   ## Usage 
   
